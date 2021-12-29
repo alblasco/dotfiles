@@ -1,0 +1,13 @@
+# Set the colors.
+--colors=path:fg:magenta
+--colors=path:style:bold
+
+# Because who cares about case!?
+--ignore-case
+
+# Add my 'web' type.
+#--type-add
+#web:*.{html,css,js}*
+
+# Using glob patterns to include/exclude files or folders
+#--glob=!git/*

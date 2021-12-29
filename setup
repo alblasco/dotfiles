@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for symlink in bashrc bat editorconfig git rg tmux vim
+do
+  stow -v -t "$HOME" "$symlink"
+done

@@ -1,0 +1,24 @@
+[user]
+  name = Angel Luis Blasco
+  email = 22562761+alblasco@users.noreply.github.com
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+  lg = log --decorate --oneline --graph
+  st = status
+  re = rebase
+[core]
+  editor = vim
+[credential]
+  helper = cache --timeout=1000000
+[merge]
+  tool = meld
+[diff]
+  tool = meld
+[fetch]
+  prune = true
+[pull]
+  rebase = true
+[push]
+  default = current

@@ -23,7 +23,6 @@ Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'kana/vim-textobj-user'
 Plug 'vim-scripts/argtextobj.vim'
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -34,14 +33,9 @@ Plug 'godlygeek/tabular', { 'on': ['Tab', 'Tabular'] }
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 
-Plug 'janko-m/vim-test', { 'for': ['ruby', 'python', 'go', 'javascript'] }
-
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'janko-m/vim-test', { 'for': ['python'] }
 Plug 'python-mode/python-mode', { 'for': 'python' }
-Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'vim-scripts/bats.vim', { 'for': 'bats' }
 

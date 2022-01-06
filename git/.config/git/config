@@ -10,12 +10,20 @@
   re = rebase
 [core]
   editor = vim
+  pager = delta
 [credential]
   helper = cache --timeout=1000000
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = decorations
+  navigate = true
+  side-by-side = true
+  syntax-theme = GitHub
 [merge]
-  tool = meld
+  conflictstyle = diff3
 [diff]
-  tool = meld
+  colorMoved = default
 [fetch]
   prune = true
 [pull]

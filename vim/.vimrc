@@ -1,15 +1,16 @@
 " Plug
 call plug#begin()
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-sleuth'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'wincent/ferret', { 'on': ['Ack', 'Acks'] }
-Plug 'junegunn/fzf', { 'on': 'FZF' }
+Plug 'wincent/ferret'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 
 Plug 'tpope/vim-surround'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
@@ -23,34 +24,14 @@ Plug 'terryma/vim-expand-region'
 Plug 'davidhalter/jedi-vim'
 Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'vim-scripts/bats.vim', { 'for': 'bats' }
 
+Plug 'vim-utils/vim-man'  " to view man pages
 call plug#end()
 
 let mapleader=","
 
-let g:TerminusFocusReporting=0
-let g:TerminusMouse=0
-let g:TerminusBracketedPaste=0
-
-if exists('+termguicolors') && $TERM ==# 'screen-256color'
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
 set colorcolumn=110
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_powerline_fonts = 1
 
 let NERDTreeIgnore=['\.pyc$', '\.orig$', '__pycache__', '\.git$']
 map <C-x> :NERDTreeToggle<CR>
@@ -64,18 +45,30 @@ let g:pymode_breakpoint = 0
 let g:pymode_options_max_line_length = 110
 
 
-let g:terraform_align = 1
-
 set hlsearch
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸⸱,eol:¬,trail:⸱
 set number
-set showmatch
+set showmatch " show matching brace
 set wildignore+=*.pyc,node_modules,*.egg-info
 set wildmode=list:longest
 set nofoldenable
-
+set clipboard^=unnamed,unnamedplus
 set cursorline
+set showcmd
+set mouse=a         " enable mouse in all modes. added to be able to resize split windows
+if has("mouse_sgr") " fixes to resize split windows inside tmux  https://stackoverflow.com/a/1925325://stackoverflow.com/a/19253251
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
+if &term =~ 'gnome' "from :help arrow_modifiers in gnome
+  execute "set <xUp>=\<Esc>[@;*A"
+  execute "set <xDown>=\<Esc>[@;*B"
+  execute "set <xRight>=\<Esc>[@;*C"
+  execute "set <xLeft>=\<Esc>[@;*D"
+endif
+set term=xterm-256color " Fix ctrl-arrows inside tmux  https://stackoverflow.com/a/16640087
 
 imap jj <Esc>
 cmap w!! w !sudo tee % >/dev/null
@@ -84,11 +77,4 @@ set directory^=~/.vim/recover
 set undofile
 set undodir=~/.vim/undodir
 
-
-set clipboard=unnamed
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-endif
-
 set completeopt=longest,menuone
-set hidden

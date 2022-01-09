@@ -26,7 +26,7 @@ Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
 Plug 'vim-scripts/bats.vim', { 'for': 'bats' }
 
-Plug 'vim-utils/vim-man'  " to view man pages
+Plug 'vim-utils/vim-man'  " to open man pages
 call plug#end()
 
 let mapleader=","
@@ -56,7 +56,7 @@ set nofoldenable
 set clipboard^=unnamed,unnamedplus
 set cursorline
 set showcmd
-set mouse=a         " enable mouse in all modes. added to be able to resize split windows
+set mouse=a         " enable mouse in all modes. added to be able to resize split windows. Note: Press shift while mouse selection
 if has("mouse_sgr") " fixes to resize split windows inside tmux  https://stackoverflow.com/a/1925325://stackoverflow.com/a/19253251
     set ttymouse=sgr
 else

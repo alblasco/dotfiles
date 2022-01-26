@@ -145,4 +145,6 @@ git(){
     fi
 }
 
+export PATH=$PATH:~/automation/script-tooling/
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

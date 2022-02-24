@@ -15,3 +15,4 @@ cd dotfiles
 git submodule update --init
 ```
 2. Run setup
+Precondition: you must have stow installed `sudo apt install stow`

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for symlink in bashrc bat editorconfig git rg tmux vim terminator
+for symlink in bat editorconfig git rg tmux vim terminator
 do
   stow -v -t "$HOME" "$symlink"
 done

@@ -127,24 +127,6 @@ if [ -f '/home/angel/google-cloud-sdk/path.bash.inc' ]; then . '/home/angel/goog
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/angel/google-cloud-sdk/completion.bash.inc' ]; then . '/home/angel/google-cloud-sdk/completion.bash.inc'; fi
 
-# https://www.shellhacks.com/show-git-branch-terminal-command-prompt/
-git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[00;32m\]\$(git_branch)\[\033[00m\]\$ "
-
-
-# Wrap git. On errors, print an additional line in red.
-git(){
-    command git "$@"
-    local exitCode=$?
-    if [ $exitCode -ne 0 ]; then
-        printf "\033[0;31mERROR: git exited with code $exitCode\033[0m\n"
-        return $exitCode
-    fi
-}
-
-export PATH=$PATH:~/automation/script-tooling/
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

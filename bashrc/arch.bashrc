@@ -37,5 +37,4 @@ alias ic="ibmcloud"
 alias ki="kubectl -n ibm-observe"
 alias k="kubectl"
 alias v="vagrant"
-
-export PATH=$PATH:~/automation/script-tooling/
+alias sterna="stern -n sysdig-agent sysdig-agent"cd

@@ -96,6 +96,7 @@ alias ic="ibmcloud"
 alias ki="kubectl -n ibm-observe"
 alias k="kubectl"
 alias v="vagrant"
+alias sterna="stern -n sysdig-agent sysdig-agent"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

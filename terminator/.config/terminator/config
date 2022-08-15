@@ -10,7 +10,9 @@
   go_right = None
 [profiles]
   [[default]]
+    cursor_color = "#aaaaaa"
     font = FantasqueSansMono Nerd Font 24
+    scrollback_infinite = True
     use_system_font = False
     copy_on_selection = True
 [layouts]

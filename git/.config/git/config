@@ -2,12 +2,10 @@
   name = Angel Luis Blasco
   email = 22562761+alblasco@users.noreply.github.com
 [alias]
-  br = branch
   ci = commit
   co = checkout
   lg = log --decorate --oneline --graph
   st = status
-  re = rebase
 [core]
   editor = vim
   pager = delta
@@ -21,9 +19,9 @@
   side-by-side = true
   syntax-theme = GitHub
 [merge]
-  conflictstyle = diff3
+  tool = kdiff3
 [diff]
-  colorMoved = default
+  tool = kdiff3
 [fetch]
   prune = true
 [pull]

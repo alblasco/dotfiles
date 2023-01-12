@@ -131,3 +131,13 @@ if [ -f '/home/angel/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ange
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[00;32m\]\$(git_branch)\[\033[00m\]\$ "
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(starship init bash)"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Set time and date in history
+export HISTTIMEFORMAT="%F %T "

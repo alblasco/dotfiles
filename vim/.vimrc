@@ -26,7 +26,6 @@ Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
 Plug 'vim-scripts/bats.vim', { 'for': 'bats' }
 
-Plug 'vim-utils/vim-man'  " to open man pages
 call plug#end()
 
 let mapleader=","

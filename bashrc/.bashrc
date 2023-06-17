@@ -141,3 +141,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Set time and date in history
 export HISTTIMEFORMAT="%F %T "
+
+eval "$(thefuck --alias)"
+[[ -s /home/angel/.autojump/etc/profile.d/autojump.sh ]] && source /home/angel/.autojump/etc/profile.d/autojump.sh

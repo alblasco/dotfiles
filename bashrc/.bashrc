@@ -92,6 +92,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ka="kubectl -n sysdig-agent"
+alias kc="kubectl -n sysdigcloud"
 alias ic="ibmcloud"
 alias ki="kubectl -n ibm-observe"
 alias k="kubectl"
@@ -144,3 +145,7 @@ export HISTTIMEFORMAT="%F %T "
 
 eval "$(thefuck --alias)"
 [[ -s /home/angel/.autojump/etc/profile.d/autojump.sh ]] && source /home/angel/.autojump/etc/profile.d/autojump.sh
+
+
+#kubectx and kubens
+export PATH=~/.kubectx:$PATH

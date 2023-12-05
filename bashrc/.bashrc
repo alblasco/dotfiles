@@ -92,6 +92,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ka="kubectl -n sysdig-agent"
+alias ha="helm -n sysdig-agent"
 alias kc="kubectl -n sysdigcloud"
 alias ic="ibmcloud"
 alias ki="kubectl -n ibm-observe"
